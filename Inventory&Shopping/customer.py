@@ -3,13 +3,13 @@ import pickle
 from pathlib import Path
 
 def main():
-    # open thte inventory
+    # open the inventory
     the_file = open("inventory.pkl", 'rb')
     the_item = pickle.load(the_file)
     the_file.close()
     # make a shopping list
     the_purchase = retail_item.CashRegister()
-    
+
     for_customer(the_item, the_purchase)
 
 def for_customer(the_item, the_purchase):
@@ -18,7 +18,7 @@ def for_customer(the_item, the_purchase):
     while (True):
         print(the_item)
         choice = input("enter merchandise number to purchase, z to clear cash register, or x to check out item list: ")
-        
+
         # see if the choice is within the item list
         if(choice.isdigit() and 1 <= int(choice) <= len(the_item.get_item_dict())):
             choice = int(choice)

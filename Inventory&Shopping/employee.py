@@ -1,3 +1,6 @@
+# The employee can use this program
+# to make a inventory list or read a existing one
+
 import retail_item
 import pickle
 from pathlib import Path
@@ -24,7 +27,7 @@ def for_employee(the_item):
         item = input("Enter the description of your items: ")
         units = int(input("Enter the units you want to store: "))
         item_dict = the_item.get_item_dict()
-        
+
         # add the item to the stock
         if item in item_dict.values():
             # if the item exists, add the units to the existing stock

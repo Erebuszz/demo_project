@@ -19,6 +19,7 @@ class Inventory:
     def get_price(self, order):
         return self.__items[order].price
 
+    # get a dictionary of order:description of the existing items
     def get_item_dict(self):
         item_dict = {}     
         for i in range(1, len(self.__items)+1):
