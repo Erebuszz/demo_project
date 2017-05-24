@@ -43,7 +43,7 @@ def for_employee(the_item):
     my_file = Path("inventory.pkl")
     overwrite = 'y'
 
-    if(my_file.exists()):
+    if(save.lower()=='y' and my_file.exists()):
         overwrite = input("File exists! Do you want to overwrite it? ")
 
     # if there is no existing file or you want to overwrite it, save the changes
