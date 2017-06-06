@@ -7,9 +7,8 @@ def main():
     add_exist = input("Load the existing list? (y for yes, n for no) ")
     # if the list exist, open it, else create a new one
     if(add_exist.lower() == 'y'):
-        the_file = open("inventory.pkl", 'rb')
-        the_item = pickle.load(the_file)
-        the_file.close()
+        with open("inventory.pkl", 'rb') as the_file:
+            the_item = pickle.load(the_file)
     else:
         the_item = employ.Inventory()
 
@@ -137,8 +136,7 @@ def save_file(the_item):
 
     # if there is no existing file or you want to overwrite it, save the changes
     if(overwrite.lower() == 'y' or not my_file.exists):
-            output = open("inventory.pkl", "wb")
-            pickle.dump(the_item, output, pickle.HIGHEST_PROTOCOL)
-            output.close()
+            with open("inventory.pkl", "wb") as output:
+                pickle.dump(the_item, output, pickle.HIGHEST_PROTOCOL)
 
 main()
